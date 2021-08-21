@@ -10,5 +10,6 @@ namespace Bar.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public float Degrees { get; set; }
+       
     }
 }
