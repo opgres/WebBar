@@ -20,17 +20,18 @@ namespace Bar
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 
 
+
+
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
+        }     
 
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connect = Configuration.GetConnectionString("dConnect");
+            string connect = Configuration.GetConnectionString("DbConnectString");
             services.AddDbContext<AppContext>(options => options.UseSqlServer(connect));
             services.AddControllersWithViews();
 
