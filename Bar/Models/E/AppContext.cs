@@ -10,7 +10,8 @@ namespace Bar.Models.E
     {
         public AppContext(DbContextOptions<AppContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureCreated();//проверяется есть ли бд, если нет создает ее
+            
         }
         public DbSet<Ingredient> Ingredients { get; set; }
     }

@@ -10,6 +10,6 @@ namespace Bar.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Cocktail> Cocktails { get; set; }
+        public virtual List<Cocktail> Cocktails { get; set; }
     }
 }
