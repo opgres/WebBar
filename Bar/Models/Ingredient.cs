@@ -11,11 +11,7 @@ namespace Bar.Models
         public string Name { get; set; }
         public float Degrees { get; set; }
 
-        public virtual List<Cocktail> Cocktails { get; set; }
-        public Ingredient()
-        {
-            Cocktails = new List<Cocktail>();
-        }
+        public virtual List<Ingredient_Value> Ingredient_Values { get; set; }
 
     }
 }

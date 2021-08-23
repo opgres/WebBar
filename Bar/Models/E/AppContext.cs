@@ -15,6 +15,7 @@ namespace Bar.Models.E
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Ingredient_Value> Ingredient_Values{ get; set; }
         public DbSet<Cocktail> Cocktails { get; set; }
 
     }

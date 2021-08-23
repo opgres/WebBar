@@ -14,10 +14,10 @@ namespace Bar.Models
         public string Img { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
-        public virtual List<Ingredient> Ingredients { get; set; }
+        public virtual List<Ingredient_Value> Ingredient_Values{ get; set; }
         public Cocktail()
         {
-            Ingredients = new List<Ingredient>();
+            Ingredient_Values = new List<Ingredient_Value>();
         }
 
 
