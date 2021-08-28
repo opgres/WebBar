@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bar.Models.E
 {
-    public class AppContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public AppContext(DbContextOptions<AppContext> options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             Database.EnsureCreated();//проверяется есть ли бд, если нет создает ее
             

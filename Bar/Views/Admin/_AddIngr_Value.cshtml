@@ -1,0 +1,31 @@
+﻿@model Bar.Models.Ingredient_Value
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddIngr_Value";
+}
+<html>
+<head>
+    <title>AddIngr_Value</title>
+</head>
+<body>
+    @* Ингредиенты и объем *@
+    <form asp-action="_AddIngr_Value" asp-controller="Admin" method="post">
+        @*<div class="form-group">
+            <label asp-for="IngredientId" class="control-label">Ингредиент</label>
+            <input type="text" asp-for="IngredientId" class="form-control" />
+        </div>*@
+
+        <div class="form-group">
+            <label asp-for="Value" class="control-label">Необходимый объем</label>
+            <input type="text" asp-for="Value" class="form-control" />
+        </div>
+        @Html.DropDownListFor(m => m.IngredientId, (SelectList)ViewBag.Ingredients)
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+    </form>
+
+
+
+</body>
+</html>

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bar.Models.E;
-using AppContext = Bar.Models.E.AppContext;
+
 
 namespace Bar
 {
@@ -32,7 +32,7 @@ namespace Bar
         public void ConfigureServices(IServiceCollection services)
         {
             string connect = Configuration.GetConnectionString("DbConnectString");
-            services.AddDbContext<AppContext>(options => options.UseSqlServer(connect));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connect));
             services.AddControllersWithViews();
 
 

@@ -1,0 +1,29 @@
+﻿@model Bar.Models.Ingredient
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddIngr";
+}
+<html>
+<head>
+    <title>AddIngr</title>
+</head>
+<body>
+    @* Ингредиенты *@
+    <form asp-action="_AddIngr" asp-controller="Admin" method="post">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Ингредиент</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Degrees" class="control-label">Градус</label>
+            <input type="text" asp-for="Degrees" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+    </form>
+
+
+
+</body>
+</html>

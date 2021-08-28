@@ -1,5 +1,5 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model Bar.Models.Cocktail 
+@model IEnumerable<Bar.Models.Category>
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,16 +8,12 @@
     <title>BarCard</title>
 </head>
 <body>
-    <h3>Смартфоны</h3>
-    <table>
-        <tr>
-            <td>Модель</td>
-            <td>Производитель</td>
-            <td>Цена</td>
-            <td></td>
-        </tr>
-     
-            
+    <a asp-controller="Admin" asp-action="WorkwithDb">Окно администратора</a>
+    <table class="table">
+        <tr><td>Категория:</td></tr>
+        @foreach (var item in Model )
+        {
+            <tr><td>@item.Name</td></tr>
         }
     </table>
 </body>

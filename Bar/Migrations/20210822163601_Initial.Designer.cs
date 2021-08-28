@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bar.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20210822163601_Initial")]
     partial class Initial
     {
