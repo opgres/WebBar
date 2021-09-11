@@ -1,0 +1,26 @@
+﻿@model Bar.Models.Category
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddCategory";
+}
+<html>
+<head>
+    <title>AddCategory</title>
+</head>
+<body>
+    @* Категория *@
+    <form asp-action="_AddCategory" asp-controller="Admin" method="post">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Категория</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+    </form>
+
+
+
+</body>
+</html>

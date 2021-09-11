@@ -1,0 +1,42 @@
+﻿*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, Arial, Sans-Serif;
+    font-size: 14px;
+    background-color: #c9ad20
+}
+
+.mainlink {
+    text-align: center;
+    font-size: 12px;
+    color: #4495d4;
+    width:25%;
+}
+
+.maintitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+
+    .ptitle {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+
+
+
+
+
+.adminform {
+    padding: 25px;
+    border: 2px solid #4287f5;
+    background: red;
+    margin: 50px 100px 50px 200px;
+}

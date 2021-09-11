@@ -19,7 +19,7 @@ namespace Bar.Controllers
         [HttpGet]
         public ViewResult Index()
         { 
-            return View("Index",db.Categories);
+            return View("Index",db.Cocktails);
         }
         protected override void Dispose(bool disposing)
         {

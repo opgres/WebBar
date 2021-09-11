@@ -1,5 +1,6 @@
 ﻿using Bar.Models;
 using Bar.Models.E;
+using Bar.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -22,16 +23,23 @@ namespace Bar.Controllers
         [HttpGet]
         public ViewResult WorkwithDb()
         {
-            ViewBag.Ingredients = new SelectList(db.Ingredients, "Id", "Name");
-
+            
+            ViewBag.Ingredients = db.Ingredients.ToList();
+            ViewBag.Categories = new SelectList(db.Categories, "Id", "Name");
+            ViewBag.IngredientValue = db.Ingredient_Values.ToList();
             return View();
         }      
 
         [HttpPost]//дает возможность получить информацию и в дальнейшем ее обработать
-        public ActionResult WorkwithDb(Category category)
+        public ActionResult WorkwithDb(Cocktail cocktail, int[] selectedValues)
         {
-            db.Categories.Add(category);
+            foreach (var c in db.Ingredient_Values.Where(co => selectedValues.Contains(co.Id)))
+            {
+                cocktail.Ingredient_Values.Add(c);
+            }
+            db.Cocktails.Add(cocktail);
             db.SaveChanges();
+            
             return Redirect("WorkwithDb");
         }
         public ActionResult _AddIngr(Ingredient ingredient)
@@ -46,11 +54,12 @@ namespace Bar.Controllers
             db.SaveChanges();
             return Redirect("WorkwithDb");
         }
-        //public ActionResult _AddCocktail(Cocktail cocktail)
-        //{
-        //    db.Cocktails.Add(cocktail);
-        //    db.SaveChanges();
-        //    return View("WorkwithDb");
-        //}
+        public ActionResult _AddCategory(Category category)
+        {
+            db.Categories.Add(category);
+            db.SaveChanges();
+            return Redirect("WorkwithDb");
+        }
+      
     }
 }
